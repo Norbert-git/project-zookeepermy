@@ -9,14 +9,19 @@
 </head>
 <body>
     
-    <h1>New Page</h1>
-    <form class="main" action="/enclosures" method="POST">
-        Name: <input type="text" name="name"><br>
-        Keeper In Charge: <input type="text" name="keeper"><br>
-        Date Created: <input type="date" name="lastChecked"><br>
-        Notes: <textarea name="comments"></textarea><br>
-        Image src: <input type="url" name="img">
-        <input type="submit" value="Submit">
-    </form>
-</body>
+    <h1 class= 'enclosureName'>New Page</h1>
+    <form class= 'addEnclosure' action="/enclosures" method="POST">
+                Name: <br>
+                <input type="text" name="name"/><br>
+                Keeper In Charge: <br>
+                <input type="text" name="keeper"/><br>
+                Date Created: <br>
+                <input type="date" name="lastChecked"/><br>
+                Notes: <br>
+                <textarea name="comments"/></textarea><br>
+                Image src: <br>
+                <input type="url" name="img"/>
+                <input type="submit" value="Submit"/>
+       </form>
+    </body>
 </html>

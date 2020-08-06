@@ -1,15 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Document</title>
+    <%- include('../partials/header.ejs', {name: user.username}) %>
 <body>
-    <h1>Enclosures</h1>
-    <section class="main">
-        <div class="enclosures-main">
+    <h1 class= 'enclosure'>Enclosures</h1>
+    <section class="enclosureList">
+        <ul>
             <% enclosures.forEach(enclosure => { %>
-            <div class="enclosure">
+            <li>
                 <a href="/enclosures/<%= enclosure.id %>"><%= enclosure.name %></a><br>
                 Occupancy: <%= enclosure.animals.length %>
-                <!-- <a href="/enclosures/<%= enclosure.id %>"><img src="<%= enclosure.img %>" alt="<%= enclosure.name %>"></a><br>
-                Occupancy: <%= enclosure.animals.length %> -->
-            </div>
-        </div>
-        <% }) %>
+            </li><br>
+            <% }) %>
+        </ul><br>
+        
     </section>
 </body>

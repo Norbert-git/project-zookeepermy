@@ -8,13 +8,12 @@
     <%- include('../partials/header.ejs', {name: user.username}) %>
 </head>
 <body>
-    <%- include('../partials/header.ejs', {name: user.username}) %>
-    <div class="enclosure-img">
-        <img src="<%= enclosure.img %>" alt="<%= enclosure.name %> Enclosure">
-    </div>
+   <div class= 'enclosureName'>
     <h1><%= enclosure.name %> Enclosure</h1>
-    <a href="/animals/new">Add Animal</a><br>
-    <section class="main">
+    
+    <img src="<%= enclosure.img %> " alt=""><br>
+    </div>
+    <section class="enclosureData">
     Keeper In Charge: <%= enclosure.keeper %> <br>
     Last Checked: <%= enclosure.lastChecked %> <br>
     Occupants: <br>
@@ -32,8 +31,9 @@
     Comments: 
     
     <%= enclosure.comments %>
+    
     </section><br>
-    <section>
+    <section class= 'enclosureEditButton'>
         <a href="<%= enclosure.id %>/edit">Edit Enclosure</a>
     </section>
 </body>

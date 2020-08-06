@@ -8,21 +8,10 @@
 	<title>Document</title>
 	<%- include('../partials/header.ejs', {name: user.username}) %>
 	<body>
-		<header>
-			
+		<header class= 'animalInfo'>
 			<h1>Edit <%= animal.name %>'s Info</h1>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/animals">List of Animals</a>
-					</li>
-				</ul>
-			</nav>
 		</header>
-		<main>
+		<main class= 'animalInfoList'>
 			<form action="/animals/<%= animal._id %>?_method=PUT" method="POST">
 				<select name="enclosureId">
 					<% enclosures.forEach(enclosure => { %>
@@ -35,14 +24,22 @@
 					</option>
 						<% }) %>
 				</select><br />
-				Name of the Animal: <input type="text" name= "name" value= "<%= animal.name %>"/><br/>
-				The Animal's Age: <input type="number" name= "age" value= "<%= animal.age %>"/><br/>
-				Species: <input type="text" name="species" value= "<%= animal.species %>"/><br/>
-				Last Checked: <input type="text" name="lastChecked" value= "<%= animal.lastChecked %>"/><br/>
-				Last ZooKeeper: <input type="text" name="lastKeeper" value= "<%= animal.lastKeeper %>"/><br/>
-				Current Medication: <input type="text" name="currentMeds" value= "<%= animal.currentMeds %>"/><br/>
-				Image: <input type="text" name="img" value= "<%= animal.img %>"/><br/>
-				Comments: <textarea name="comments" value= "<%= animal.comments %>"/></textarea><br/>
+				Name of the Animal: <br>
+				<input type="text" name= "name" value= "<%= animal.name %>"/><br/>
+				The Animal's Age: <br>
+				<input type="number" name= "age" value= "<%= animal.age %>"/><br/>
+				Species: <br>
+				<input type="text" name="species" value= "<%= animal.species %>"/><br/>
+				Last Checked: <br>
+				<input type="text" name="lastChecked" value= "<%= animal.lastChecked %>"/><br/>
+				Last ZooKeeper: <br>
+				<input type="text" name="lastKeeper" value= "<%= animal.lastKeeper %>"/><br/>
+				Current Medication: <br>
+				<input type="text" name="currentMeds" value= "<%= animal.currentMeds %>"/><br/>
+				Image: <br>
+				<input type="text" name="img" value= "<%= animal.img %>"/><br/>
+				Comments: <br>
+				<textarea name="comments" value= "<%= animal.comments %>"/></textarea><br/>
 				<input type="submit" value="Update Animal"/>
 			</form>
 		</main>

@@ -115,7 +115,7 @@ const animals_list = [
     }),
     
     ...reptiles.map(reptile => {
-        return new Animal(reptile, 'Reptile', 'Marissa', 'https://www.treehugger.com/thmb/jW7AJdxhmumgojTkEqtOMsThdmQ=/889x667/smart/filters:no_upscale()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2016__09__gecko-on-sand-e5f7facb4d8e4dc19a81ed03dd166451.jpg', 5)
+        return new Animal(reptile, 'Reptile', 'Marissa', 'https://images.earthtouchnews.com/media/385812/Palmatogecko-rangei_Namib-gecko_2014_08_19.jpg', 5)
     }),
     ...primates.map(primate => {
         return new Animal(primate, 'Primate', 'Seth', 'https://www.sustainability-times.com/wp-content/uploads/thumbs/photo-1540573133985-87b6da6d54a9-38rh6ylbrs98vl3ftqg5xc.jpg', 6)

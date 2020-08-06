@@ -6,35 +6,36 @@
     <link rel="stylesheet" href="/CSS/style.css">
 	<title>Document</title>
 	<%- include('../partials/header.ejs', {name: user.username}) %>
-	<body>
+	<body >
 		<header class='newAnimal'>
 			
 			<h1>Add a new Animal to the list</h1>
-			<nav>
-				<ul>
-					<li>
-						<a href="/animals">List of Animals</a>
-					</li>
-				</ul>
-			</nav>
 		</header>
-		<main class>
+		<main class= 'newAnimals'>
 			<form action="/animals" method="post">
 				<select name="enclosureId">
 					<% enclosures.forEach(enclosure => { %>
 						<option value="<%= enclosure._id %>">
-							<%= enclosure.name %>
+							<%= enclosure.name %> 
 						</option>
-					<% }) %>
-				</select><br />
-				Name of the Animal: <input type="text" name="name"/><br/>
-				The Animal `s Age: <input type="number" name="age"/><br/>
-				Species: <input type="text" name="species"/><br/>
-				Last Checked: <input type="date" name="lastChecked"/><br/>
-				Last ZooKeeper: <input type="text" name="lastKeeper"/><br/>
-				Current Medication: <input type="text" name="currentMeds" /><br/>
-				Image: <input type="text" name="img" /><br/>
-				Comments: <textarea name="comments" ></textarea><br/>
+					<% }) %><br>
+				</select><br>
+				Name of the Animal: <br>
+				<input type="text" name="name"/><br>
+				The Animal `s Age: <br>
+				<input type="number" name="age"/><br>
+				Species: <br>
+				<input type="text" name="species"/><br>
+				Last Checked: <br>
+				<input type="date" name="lastChecked"/><br>
+				Last ZooKeeper: <br>
+				<input type="text" name="lastKeeper"/><br>
+				Current Medication: <br>
+				<input type="text" name="currentMeds" /><br>
+				Image: <br>
+				<input type="text" name="img" /><br>
+				Comments:<br>
+				 <textarea name="comments" ></textarea><br>
 				<input type="submit" value="Submit"/>
 			</form>
 		</main>

@@ -7,49 +7,41 @@
 	<title>Document</title>
 	<%- include('../partials/header.ejs', {name: user.username}) %>
 	<body>
-		<header>
-			<%- include('../partials/header.ejs', {name: user.username}) %>
-		</header>
-		<main>
-			<h1><%= animal.name %> is currently in the
+		<main >
+			<h1 class= 'animalShow'><%= animal.name %> is currently in the </h1>  
+				<br>
 				<% if (enclosure.id) { %>
-					<a href="/enclosures/<%= enclosure.id %>"><%= enclosure.name %>
+				<h1 class= 'enclosureCall'>	<a href="/enclosures/<%= enclosure.id %>"><%= enclosure.name %>
 				<% } else { %>
-					UNASSIGNED
-				<% } %>  
-				 Enclosure</a></h1>
+				<h1>	UNASSIGNED
+				<% } %> <br> 
+				 <br>Enclosure</a></h1>
 			<div class="animal-img">
 				<img src="<%= animal.img %>" alt="<%= animal.name %> ">
 			</div>
-			<ul>
-				<li>Age: <%= animal.age %></li>
-				<li>Species: <%= animal.species %></li>
-				<li>Last Check-Up: <%= animal.lastChecked %></li>
-				<li>By: <%= animal.lastKeeper %></li>
-				<li>Current Meds: <%= animal.currentMeds %></li>
-				<li>Last Diagnosis: <%= animal.comments %></li>
-			</ul>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/animals">List of Animal</a>
-					</li>
-				</ul>
-			</nav>
 			<section>
-				<%= animal.body %>
-			</section>
-			<section>
-				<form action="/animals/<%= animal._id %>?_method=DELETE" method="POST">
-					<input type="submit" value="Delete Animal">
-				</form>
-			</section>
-			<section>
-				<a href="/animals/<%=animal._id%>/edit">Edit</a>
-			</section>
+					<%= animal.body %>
+				</section>
+			<div class= 'animalData'>
+				<form>
+					<ul>
+						Age: <%= animal.age %><br>
+						Species: <%= animal.species %><br>
+						Last Check-Up: <%= animal.lastChecked %><br>
+						By: <%= animal.lastKeeper %><br>
+						Current Meds: <%= animal.currentMeds %><br>
+						Last Diagnosis: <%= animal.comments %><br>
+					</ul>
+			    </form>
+				<section>
+					<form action="/animals/<%= animal._id %>?_method=DELETE" method="POST">
+						<input type="submit" value="Delete Animal">
+					</form>
+				</section>
+				<section>
+					<a href="/animals/<%=animal._id%>/edit">Edit</a>
+				</section>
+				</div>
 		</main>
 	</body>
 </html>
