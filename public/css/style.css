@@ -6,7 +6,7 @@
   font-family: 'poppins', sans-serif; }
 
 .nav {
-  display: flexbox;
+  display: flex;
   flex-direction: row;
   width: 300px;
   justify-content: center;

@@ -4,11 +4,7 @@ const mongoose = require('mongoose')
 // LOCAL DB CONNECTION
 const connectionString = 'mongodb://localhost/zookeeper'
 // ATLAS DB CONNECTION
-<<<<<<< HEAD
-// const connectionString = process.env.DATABASE_URL
-=======
 //const connectionString = process.env.DATABASE_URL
->>>>>>> submaster
 
 mongoose.connect(connectionString, {
     useNewUrlParser: true,
