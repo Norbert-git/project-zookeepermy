@@ -10,63 +10,63 @@ const enclosures_list = [
         "lastChecked": "",
         "animals": [],
         "comments": "",
-        "img": "https://imgur.com/SUhB9xf"
+        "img": "https://i.imgur.com/SUhB9xf.jpg"
     }, {
         "name": "Tigers",
         "keeper": "Worf",
         "lastChecked": "",
         "animals": [],
         "comments": "",
-        "img": "https://imgur.com/vR5Nl9X"
+        "img": "https://i.imgur.com/vR5Nl9X.jpg"
     }, {
         "name": "Bears",
         "keeper": "Will",
         "lastChecked": "",
         "animals": [],
         "comments": "",
-        "img": "https://imgur.com/dl6U8Eb"
+        "img": "https://i.imgur.com/dl6U8Eb.jpg"
     }, {
         "name": "Elephants",
         "keeper": "Data",
         "lastChecked": "",
         "animals": [],
         "comments": "",
-        "img": "https://imgur.com/s8Lgca4"
+        "img": "https://i.imgur.com/s8Lgca4.jpg"
     }, {
         "name": "Wolves",
         "keeper": "Geordi",
         "lastChecked": "",
         "animals": [],
         "comments": "",
-        "img": "https://imgur.com/QYCzdxp"
+        "img": "https://i.imgur.com/QYCzdxp.jpg"
     },  {
         "name": "Reptiles",
         "keeper": "Deanna",
         "lastChecked": "",
         "animals": [],
         "comments": "",
-        "img": "https://imgur.com/Iur6cpI"
+        "img": "https://i.imgur.com/Iur6cpI.jpg"
     },  {
         "name": "Primates",
         "keeper": "Jean-Luc",
         "lastChecked": "",
         "animals": [],
         "comments": "",
-        "img": "https://imgur.com/RxIn1q4"
+        "img": "https://i.imgur.com/RxIn1q4.jpg"
     },  {
         "name": "Birds",
         "keeper": "Wesley",
         "lastChecked": "",
         "animals": [],
         "comments": "",
-        "img": "https://imgur.com/DevN12D"
+        "img": "https://i.imgur.com/DevN12D.jpg"
     }, {
         "name": "Dolphins",
         "keeper": "Geordi",
         "lastChecked": "",
         "animals": [],
         "comments": "",
-        "img": "https://imgur.com/vJPr97h"
+        "img": "https://i.imgur.com/vJPr97h.jpg"
     }   
 ]
 
@@ -146,20 +146,13 @@ const seedDb = async () => {
         
         // assign animals based on enclosure index
         const allEnclosures = await db.Enclosure.find({})
-        // console.log('allEnclosures:') // TODO: remove
-        // console.log(allEnclosures) // TODO: remove
         const allAnimals = await db.Animal.find({})
-        // console.log('allAnimals:') // TODO: remove
-        // console.log(allAnimals) // TODO: remove
         for (let i = 0; i < animals_list.length; i++) {
             const animalToAdd = await db.Animal.findOne({'name': animals_list[i].name})
-            console.log(animalToAdd)
             const animalEnclosure = allEnclosures[animals_list[i].enclosureIndex]
             console.log(animalEnclosure)
             await allEnclosures[animals_list[i].enclosureIndex].animals.push(animalToAdd._id)
-            await allEnclosures[animals_list[i].enclosureIndex].save()
-            
-            // console.log(allEnclosures[animals_list[i].enclosureIndex])
+            await allEnclosures[animals_list[i].enclosureIndex].save()   
         }
     } catch (err) {
         console.error(err)
