@@ -178,3 +178,19 @@ p {
     transform: translateY(-600px)
 
 }
+
+.animal-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    background-position: center;
+    background-size: cover;
+    }
+  
+    main ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
